@@ -37,29 +37,7 @@
 
 <body>
 <script language="javascript">
-	function selectAll(object){
-		var inputs = document.getElementsByTagName("input");
-		for(var i=0; i<inputs.length; i++){
-			if(inputs[i].type=="checkbox"){
-				inputs[i].checked = object.checked;
-			}
-		}
-	}
-	
-	function setValue(object){
-		var tdArray = object.getElementsByTagName("td");
-		document.getElementById("programName").value = tdArray[1].innerHTML;
-		document.getElementById("category").value = tdArray[2].innerHTML;
-		document.getElementById("ft_pt").value = tdArray[3].innerHTML;
-		document.getElementById("credentials").value = tdArray[4].innerHTML;
-		
-		var randomNum = Math.floor(Math.random() * 5)+1;
-		var courseDivs = document.getElementsByName("courseDiv");
-		for(var i=0;i<courseDivs.length;i++){
-			courseDivs[i].style = "display:none"
-		}
-		document.getElementById("courseDiv_"+randomNum).style = "display:block";
-	}
+
 </script>
     <div id="wrapper">
 
@@ -137,7 +115,7 @@
                             <a href="#">
                                 <div>
                                     <p>
-                                        <strong>COMP 7082	Software Engineering</strong>
+                                        <strong>Advanced Java Development</strong>
                                         <span class="pull-right text-muted">40% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
@@ -153,7 +131,7 @@
                             <a href="#">
                                 <div>
                                     <p>
-                                        <strong>COMP 7021	Graphics in User Interface Design</strong>
+                                        <strong>Food Safety</strong>
                                         <span class="pull-right text-muted">20% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
@@ -169,7 +147,7 @@
                             <a href="#">
                                 <div>
                                     <p>
-                                        <strong>COMP 8071	Advanced Database Application</strong>
+                                        <strong>Applied Web Development</strong>
                                         <span class="pull-right text-muted">60% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
@@ -185,7 +163,7 @@
                             <a href="#">
                                 <div>
                                     <p>
-                                        <strong>COMP 8031	Wireless and Mobile Applications Development 2</strong>
+                                        <strong>Business Administration (Marketing Option)</strong>
                                         <span class="pull-right text-muted">80% Complete</span>
                                     </p>
                                     <div class="progress progress-striped active">
@@ -198,7 +176,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a class="text-center" href="#">
+                            <a class="text-center" href="schedule.html">
                                 <strong>See All Tasks</strong>
                                 <i class="fa fa-angle-right"></i>
                             </a>
@@ -305,10 +283,10 @@
                             <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
 						<li>
-                            <a href="program.html"><i class="fa fa-institution fa-fw"></i> Program Management</a>
+                            <a href="program.html"><i class="fa fa-university fa-fw"></i> Program Management</a>
                         </li>
 						<li>
-                            <a href="course.html"><i class="fa fa-book fa-fw"></i> Course Management</a>
+                            <a href="course.html"><i class="fa fa-mortar-board fa-fw"></i> Course Management</a>
                         </li>
 						<li>
                             <a href="#"><i class="fa fa-users fa-fw"></i> User Management<span class="fa arrow"></span></a>
@@ -324,6 +302,12 @@
                         </li>
 						<li>
                             <a href="schedule.html"><i class="fa fa-calendar fa-fw"></i> Schedule</a>
+                        </li>
+						<li>
+                            <a href="tuition.html"><i class="fa fa-dollar fa-fw"></i> Tuition</a>
+                        </li>
+						<li>
+                            <a href="textbook.html"><i class="fa fa-book fa-fw"></i> Textbook</a>
                         </li>
 						<li>
                             <a href="notes.html"><i class="fa fa-edit fa-fw"></i> Notes</a>
@@ -346,238 +330,7 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-							<input type="button" class="btn btn-default" value="New Program" />
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                <thead>
-                                    <tr>
-                                        <th width="5%"><input type="checkbox" onclick="selectAll(this)"/></th>
-										<th width="25%">Program Name</th>
-                                        <th width="20%">Category</th>
-                                        <th width="20%">FT/PT</th>
-                                        <th width="15%">Credentials</th>
-                                        <th width="10%">Edit</th>
-										<th width="10%">Delete</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr class="odd gradeX" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Applied Data Analytics</td>
-                                        <td>Applied & Natural Sciences</td>
-                                        <td class="center">Part-time</td>
-                                        <td class="center">Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-                                    <tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Food Technology and Operations Management</td>
-                                        <td>Applied & Natural Sciences</td>
-                                        <td>Full-time/Distance & Online Learning</td>
-                                        <td class="center">Bachelor of Science</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-                                    <tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Geomatics Engineering Technology</td>
-                                        <td>Applied & Natural Sciences</td>
-                                        <td>Full-time</td>
-                                        <td class="center">Diploma</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Broadcast and Online Journalism</td>
-                                        <td>Broadcast & Media Communications</td>
-                                        <td>Full-time</td>
-                                        <td class="center">Diploma</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-                                    <tr class="odd gradeX" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Video Production and Editing</td>
-                                        <td>Applied & Natural Sciences</td>
-                                        <td class="center">Part-time</td>
-                                        <td class="center">Associate Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-                                    <tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Advanced Business Management</td>
-                                        <td>Business Administration</td>
-                                        <td>Part-time/Distance & Online Learning</td>
-                                        <td class="center">Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-                                    <tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Bachelor of Business Administration</td>
-                                        <td>Business Administration</td>
-                                        <td>Full-time/Part-time</td>
-                                        <td class="center">Bachelor of Business Administration</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Business Fundamentals</td>
-                                        <td>Business Administration</td>
-                                        <td>Full-time</td>
-                                        <td class="center">Associate Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>E-commerce</td>
-                                        <td>Business Administration</td>
-                                        <td>Part-time/Distance & Online Learning</td>
-                                        <td class="center">Associate Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Human Resource Management</td>
-                                        <td>Business Administration</td>
-                                        <td>Part-time/Distance & Online Learning</td>
-                                        <td class="center">Associate Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Advanced Marketing Management</td>
-                                        <td>Business Administration</td>
-                                        <td>Part-time</td>
-                                        <td class="center">Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Business Administration (Marketing Option)</td>
-                                        <td>Business Administration</td>
-                                        <td>Part-time</td>
-                                        <td class="center">Diploma</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Aircraft Gas Turbine Technician</td>
-                                        <td>Engineering</td>
-                                        <td>Full-time</td>
-                                        <td class="center">Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Architectural and Building Technology</td>
-                                        <td>Engineering</td>
-                                        <td>Full-time</td>
-                                        <td class="center">Diploma</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Aviation Maintenance Technician - Avionics</td>
-                                        <td>Engineering</td>
-                                        <td>Full-time</td>
-                                        <td class="center">Diploma</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Electrical and Computer Engineering Technology (Telecommunications and Networks Option)</td>
-                                        <td>Engineering</td>
-                                        <td>Full-time/Cooperative Education</td>
-                                        <td class="center">Diploma</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Critical Care Nursing Specialty</td>
-                                        <td>Health Sciences</td>
-                                        <td>Part-time/Distance & Online Learning</td>
-                                        <td class="center">Advanced Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Food Safety</td>
-                                        <td>Health Sciences</td>
-                                        <td>Part-time</td>
-                                        <td class="center">Associate Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									
-									<tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Technology Teacher Education</td>
-                                        <td>Trades</td>
-                                        <td>Full-time</td>
-                                        <td class="center">Diploma</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Advanced .NET Development</td>
-                                        <td>Computing & Information Technology</td>
-                                        <td>Part-time</td>
-                                        <td class="center">Associate Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="odd gradeA" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Advanced Java Development</td>
-                                        <td>Computing & Information Technology</td>
-                                        <td>Part-time</td>
-                                        <td class="center">Associate Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-									<tr class="even gradeC" onclick="setValue(this)">
-                                        <td><input type="checkbox"/></td>
-										<td>Applied Web Development</td>
-                                        <td>Computing & Information Technology</td>
-                                        <td>Part-time</td>
-                                        <td class="center">Associate Certificate</td>
-                                        <td class="center"><a href="edit.html">Edit</a></td>
-										<td class="center"><a href="#" onclick="return confirm('Are you sure?')">Delete</a></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                           
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
+            
             <div class="panel panel-default">
 			
 				<div class="panel-heading">
@@ -586,33 +339,43 @@
 				
 				<div class="panel-body">
 					<div class="row">
-						<div class="col-lg-6">
-							<form role="form">			
-								<div class="form-group">
-									<label>Program Name</label>
-									<input id="programName" class="form-control" readonly>
+						<form role="form">
+							<div class="panel-body" id="courseDiv_1" name="courseDiv" style="display:block">
+								<div class="col-lg-6">
+												
+										<div class="form-group">
+											<label>Program Name</label>
+											<input id="programName" class="form-control" >
+										</div>
+										
+										<div class="form-group">
+											<label>Category</label>
+											<input id="category" class="form-control" >
+										</div>
+										<div class="form-group">
+											<label>FT/PT</label>
+											<input id="ft_pt" class="form-control" >
+										</div>
+										<div class="form-group">
+											<label>Credentials</label>
+											<input id="credentials" class="form-control" >
+										</div>
+									
 								</div>
 								
-								<div class="form-group">
-									<label>Category</label>
-									<input id="category" class="form-control" readonly>
+								<div class="col-lg-6" align="right" valign="bottom">
+									<input align="right" type="button" class="btn btn-primary" value="Save" onclick="alert('Save successfully!');location.href='program.html'"/>
+									<input align="right" type="reset" class="btn btn-primary" value="Reset" />
+									<input align="right" type="button" class="btn btn-primary" value="Back" onclick="location.href='program.html'"/>
 								</div>
-								<div class="form-group">
-									<label>FT/PT</label>
-									<input id="ft_pt" class="form-control" readonly>
-								</div>
-								<div class="form-group">
-									<label>Credentials</label>
-									<input id="credentials" class="form-control" readonly>
-								</div>
-							</form>
-						</div>
-						
+							</div>
+						</form>
 						<!-- /.panel-heading -->
-						<div class="panel-body" id="courseDiv_1" name="courseDiv" style="display:none">
+						<div class="panel-body" id="courseDiv_1" name="courseDiv" style="display:block">
 							<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
 								<thead>
 									<tr>
+										<th width="5%"><input type="checkbox" onclick="selectAll(this)"/></th>
 										<th width="25%">Course Code</th>
 										<th width="20%">Course Name</th>
 										<th width="20%">Credit</th>
@@ -620,129 +383,91 @@
 								</thead>
 								<tbody>
 									<tr class="odd gradeX">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 7082</td>
 										<td class="center">Software Engineering</td>
 										<td class="center">3.0</td>
 									</tr>
 									<tr class="even gradeC">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 8042</td>
 										<td class="center">Advanced Algorithms and Data Structures Design and Analysis</td>
 										<td class="center">3.0</td>
 									</tr>
 									
-								</tbody>
-							</table>
-						</div>
-						<!-- /.panel-heading -->
-						<div class="panel-body" id="courseDiv_2" name="courseDiv" style="display:none">
-							<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-								<thead>
-									<tr>
-										<th width="25%">Course Code</th>
-										<th width="20%">Course Name</th>
-										<th width="20%">Credit</th>
-									</tr>
-								</thead>
-								<tbody>
+				
 									<tr class="odd gradeX">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 8082</td>
 										<td class="center">Project Management</td>
 										<td class="center">3.0</td>
 									</tr>
 									<tr class="even gradeC">
+										<td><input type="checkbox"/></td>
 										<td class="center">MATH 7908</td>
 										<td class="center">Linear Algebra and Applications for Computing</td>
 										<td class="center">3.0</td>
 									</tr>
 									<tr class="odd gradeX">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 7021</td>
 										<td class="center">Graphics in User Interface Design</td>
 										<td class="center">3.0</td>
 									</tr>
 									
-								</tbody>
-							</table>
-						</div>
-						<!-- /.panel-heading -->
-						<div class="panel-body" id="courseDiv_3" name="courseDiv" style="display:none">
-							<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-								<thead>
-									<tr>
-										<th width="25%">Course Code</th>
-										<th width="20%">Course Name</th>
-										<th width="20%">Credit</th>
-									</tr>
-								</thead>
-								<tbody>
+						
 									<tr class="even gradeC">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 8021</td>
 										<td class="center">Comparative Studies in GUI Principles</td>
 										<td class="center">3.0</td>
 									</tr>
 									<tr class="odd gradeX">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 8521</td>
 										<td class="center">Selected Topics in Advanced Interface Design</td>
 										<td class="center">3.0</td>
 									</tr>
 									<tr class="even gradeC">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 8037</td>
 										<td class="center">Major Project Proposal</td>
 										<td class="center">3.0</td>
 									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- /.panel-heading -->
-						<div class="panel-body" id="courseDiv_4" name="courseDiv" style="display:none">
-							<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-								<thead>
-									<tr>
-										<th width="25%">Course Code</th>
-										<th width="20%">Course Name</th>
-										<th width="20%">Credit</th>
-									</tr>
-								</thead>
-								<tbody>
+								
 									<tr class="odd gradeX">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 8047</td>
 										<td class="center">Major Project</td>
 										<td class="center">6.0</td>
 									</tr>
 									<tr class="even gradeC">
+										<td><input type="checkbox"/></td>
 										<td class="center">LIBS 7001</td>
 										<td class="center">Critical Reading and Writing</td>
 										<td class="center">3.0</td>
 									</tr>
 									<tr class="odd gradeX">
+										<td><input type="checkbox"/></td>
 										<td class="center">LIBS 7002</td>
 										<td class="center">Applied Ethics</td>
 										<td class="center">3.0</td>
 									</tr>
-								</tbody>
-							</table>
-						</div>
-						<!-- /.panel-heading -->
-						<div class="panel-body" id="courseDiv_5" name="courseDiv" style="display:none">
-							<table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
-								<thead>
-									<tr>
-										<th width="25%">Course Code</th>
-										<th width="20%">Course Name</th>
-										<th width="20%">Credit</th>
-									</tr>
-								</thead>
-								<tbody>
+						
 									<tr class="even gradeC">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 7005</td>
 										<td class="center">Computer Networks and Protocols</td>
 										<td class="center">3.0</td>
 									</tr>
 									<tr class="odd gradeX">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 7006</td>
 										<td class="center">Network Security Administration 1</td>
 										<td class="center">3.0</td>
 									</tr>
 									<tr class="even gradeC">
+										<td><input type="checkbox"/></td>
 										<td class="center">COMP 7031</td>
 										<td class="center">Wireless and Mobile Applications Development 1</td>
 										<td class="center">3.0</td>
@@ -756,6 +481,7 @@
             
             </div>
             <!-- /.row -->
+			
 			
         </div>
         <!-- /#page-wrapper -->
